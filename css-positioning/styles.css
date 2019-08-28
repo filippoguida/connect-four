@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    font-family: Georgia, serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    height: 60px;
+}
+
+.logo {
+    height: 30px;
+    float: left;
+    margin: 15px 30px;
+}
+
+.menu {
+    height: 25px;
+    float: right;
+    margin: 20px 35px;
+}
+
+.poster {
+    position: relative;
+    height: 50vh;
+}
+
+.poster::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/reichstag.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(70%);
+}
+
+.poster-elements {
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -175px;
+}
+
+.poster-elements h1 {
+    color: white;
+    font-size: 17pt;
+    font-weight: 400;
+    font-style: oblique 20deg;
+}
+
+.poster-elements button {
+    border-radius: 50px;
+    height: 30px;
+    width: 150px;
+    margin: 20px 0px 0px 100px;
+    background: orange;
+}
+
+.info {
+    text-align: center;
+    margin: 20px;
+}
+
+.infobox-container {
+    width: 100vw;
+}
+
+.infobox {
+    display: inline-block;
+    font-size: 9pt;
+    margin: 20px 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+.infobox div {
+    display: inline-block;
+    max-width: 250px;
+    text-align: left;
+}
+
+.infobox img {
+    display: inline-block;
+    width: 30px;
+    margin-right: 10px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    background: gray;
+    font-size: 9pt;
+    padding: 10px;
+}
+
+footer * {
+    margin: 5px;
+}
