@@ -26,6 +26,7 @@ function logType(arg) {
 
 logType(undefined);
 logType(null);
+logType(false);
 logType(0);
 logType(NaN);
 logType("stringa slacciata");
