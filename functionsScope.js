@@ -28,14 +28,13 @@ waitThenRun(function() {
 //-
 //Ex 3
 function fromOneMillion(n) {
-    if (n <= 0 || Number.isNaN(n)) {
+    if (n <= 0 || isNaN(n)) {
         return "ERROR";
     } else {
-        if (n >= 1000000) {
-            return n;
-        } else {
-            return fromOneMillion(n * 10);
+        while (n < 1000000) {
+            n *= 10;
         }
+        return n;
     }
 }
 
