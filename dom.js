@@ -12,21 +12,10 @@ empathize("p");
 //-
 //Ex 2
 function getElementsByClassName(className) {
-    var elements = [];
-    function walkHtmlTree(node) {
-        if (node.classList) {
-            if (node.classList.contains(className)) {
-                elements.push(node);
-            }
-        }
-        if (node.hasChildNodes()) {
-            for (var i = 0; i < node.childNodes.length; i++) {
-                walkHtmlTree(node.childNodes[i]);
-            }
-        }
-    }
-    walkHtmlTree(document.body);
-    return elements;
+    //IE does not support Array.from (02.09.2019)
+    return Array.prototype.slice.call(
+        document.body.getElementsByClassName(className)
+    );
 }
 getElementsByClassName("notes");
 
@@ -44,3 +33,45 @@ function makeItAwesome() {
     document.body.appendChild(p);
 }
 makeItAwesome();
+
+//-
+//Bonus 1
+function getElementsByClassName2(className) {
+    var elements = [];
+    function walkHtmlTree(node) {
+        if (node.classList) {
+            if (node.classList.contains(className)) {
+                elements.push(node);
+            }
+        }
+        if (node.hasChildNodes()) {
+            for (var i = 0; i < node.childNodes.length; i++) {
+                walkHtmlTree(node.childNodes[i]);
+            }
+        }
+    }
+    walkHtmlTree(document.body);
+    return elements;
+}
+getElementsByClassName2("notes");
+
+//-
+//Bonus 2
+function getElementsByClassName3(className) {
+    var elements = [];
+    function walkHtmlTree(node) {
+        if (node.nodeName != "#text") {
+            if (node.classList.contains(className)) {
+                elements.push(node);
+            }
+        }
+        if (node.hasChildNodes()) {
+            for (var i = 0; i < node.childNodes.length; i++) {
+                walkHtmlTree(node.childNodes[i]);
+            }
+        }
+    }
+    walkHtmlTree(document.body);
+    return elements;
+}
+getElementsByClassName3("notes");
