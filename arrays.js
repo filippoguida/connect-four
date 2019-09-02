@@ -1,8 +1,8 @@
 //Ex 1
 function each(obj, callback) {
-    if (Array.isArray()) {
+    if (Array.isArray(obj)) {
         for (var i = 0; i < obj.length; i++) {
-            callback(i, obj[i]);
+            callback(obj[i], i);
         }
     } else if (typeof obj == "object") {
         for (var key in obj) {
