@@ -1,0 +1,42 @@
+.box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: purple;
+    border-radius: 50%;
+    opacity: 0.6;
+    transform-origin: center;
+    transition-duration: 0.1s;
+    transform: scale(0);
+}
+
+.box-in {
+    animation: box-in 10s;
+}
+
+@keyframes box-in {
+    from: {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.box-pulse {
+    animation: box-pulse 0.3s infinite;
+}
+
+@keyframes box-pulse {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
