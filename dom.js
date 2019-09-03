@@ -75,3 +75,16 @@ function getElementsByClassName3(className) {
     return elements;
 }
 getElementsByClassName3("notes");
+
+//Bonus 2bis - petartzar80 version without recursion
+function getElementsByClassName3bis(className) {
+    var output = [];
+    var elements = document.getElementsByTagName("*");
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].className === className) {
+            output.push(elements[i]);
+        }
+    }
+    return elements;
+}
+getElementsByClassName3bis("notes");
