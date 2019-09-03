@@ -1,17 +1,26 @@
-.box {
+.box,
+.wrapper {
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.wrapper {
     position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.box {
     width: 100px;
     height: 100px;
     background: purple;
     border-radius: 50%;
     opacity: 0.6;
-    transform-origin: center;
     transition-duration: 0.1s;
-    transform: scale(0);
 }
 
 .box-in {
-    animation: box-in 10s;
+    animation: box-in 1s forwards;
 }
 
 @keyframes box-in {
