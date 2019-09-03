@@ -4,9 +4,7 @@ window.onload = function() {
     document.addEventListener("mousemove", function(e) {
         //move box
         box.parentElement.style.top = e.clientY - 50 + "px";
-        box.style.top = e.clientY - 50 + "px";
         box.parentElement.style.left = e.clientX - 50 + "px";
-        box.style.left = e.clientX - 50 + "px";
         //make it visible
         if (!visible) {
             box.parentElement.classList.add("box-pulse");
