@@ -7,7 +7,7 @@ window.onload = function() {
     textArea.addEventListener("input", function() {
         textArea.value = "";
         gaCount++;
-        for (var i = 0; i < gaCount; i++) {
+        for (var i = 0; i < gaCount && i < ga.length; i++) {
             textArea.value += ga[i];
         }
     });
