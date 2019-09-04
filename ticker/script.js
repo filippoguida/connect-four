@@ -16,7 +16,6 @@
                 self.startAnimation();
             });
         }
-        return this;
     }
 
     Ticker.prototype.animate = function() {
