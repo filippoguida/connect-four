@@ -1,4 +1,4 @@
-window.onload = function() {
+(function() {
     var box = document.querySelector(".box");
 
     function getRandomCSSColor() {
@@ -12,7 +12,10 @@ window.onload = function() {
             ")"
         );
     }
-    box.addEventListener("click", function() {
+    box.addEventListener("mousedown", function() {
         box.style.backgroundColor = getRandomCSSColor();
     });
-};
+    box.addEventListener("mouseup", function() {
+        box.style.backgroundColor = getRandomCSSColor();
+    });
+})();
