@@ -2,19 +2,7 @@ function Stickman(ctx, x, y) {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-
-    function getRandomCSSColor() {
-        return (
-            "rgb(" +
-            Math.floor(Math.random() * 254 + 1) +
-            "," +
-            Math.floor(Math.random() * 254 + 1) +
-            "," +
-            Math.floor(Math.random() * 254 + 1) +
-            ")"
-        );
-    }
-    this.color = getRandomCSSColor();
+    this.color = "black";
 
     Stickman.instances.push(this);
     this.draw();
