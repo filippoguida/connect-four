@@ -42,27 +42,23 @@ body {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 600px;
+    bottom: 20px;
     width: 100%;
-    z-index: 2;
 }
 
 .carousel-dot {
-    width: 15px;
-    height: 15px;
-    margin: 15px 5px;
-    border: solid 1px white;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border: 2px solid white;
     border-radius: 50%;
 }
 
 .carousel-dot.on {
-    background: white;
+    background-color: white;
 }
 
 .carousel-dot.off {
-    background: none;
+    background-color: none;
 }
