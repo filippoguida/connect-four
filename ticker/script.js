@@ -19,13 +19,6 @@
 
     Ticker.prototype.animate = function() {
         if (this.animationStatus == "playing") {
-            //translate links
-            for (var i = 0; i < this.links.length; i++) {
-                this.links.eq(i).css({
-                    transform: "translateX(" + this.offset + "px)"
-                });
-            }
-            this.offset -= 2;
             //swap hidden elements
             var first = this.links.eq(0);
             var firstSize = Math.floor(
@@ -33,11 +26,20 @@
             );
             if (Math.abs(this.offset) >= firstSize) {
                 console.log(firstSize);
-                this.offset = 0;
+                this.offset = 4;
                 first.parent().append(first);
                 //update link list
                 this.links = $(this.query + " .google-links");
             }
+
+            //translate links
+            for (var i = 0; i < this.links.length; i++) {
+                this.links.eq(i).css({
+                    transform: "translateX(" + this.offset + "px)"
+                });
+            }
+            this.offset -= 1;
+
             //call next frame
             var self = this;
             this.currentFrame = requestAnimationFrame(function() {
