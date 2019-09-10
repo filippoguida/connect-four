@@ -62,3 +62,21 @@ body {
 .carousel-dot.off {
     background-color: none;
 }
+
+@media screen and (max-width: 640px) {
+    .carousel {
+        height: 100vh;
+    }
+
+    .carousel-dot {
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    .carousel {
+        height: 360px;
+    }
+}
