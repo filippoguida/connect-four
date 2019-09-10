@@ -1,63 +1,69 @@
 (function() {
     function Ticker(tickerQuery) {
-        //instance variables
-        this.animationPlaying = false;
-        this.offset = 0;
         this.query = tickerQuery;
-        this.container = document.querySelector(this.query);
-        this.links = this.container.querySelectorAll(".google-links");
-        //set event listeners
+        this.links = $(this.query + " .google-links");
+
+        this.animationStatus = "stop";
+        this.offset = 0;
+
         for (var i = 0; i < this.links.length; i++) {
             var self = this;
-            this.links[i].addEventListener("mouseover", function() {
-                self.stopAnimation();
+            this.links.eq(i).on("mouseover", function() {
+                self.pauseAnimation();
             });
-            this.links[i].addEventListener("mouseout", function() {
-                self.startAnimation();
+            this.links.eq(i).on("mouseout", function() {
+                self.resumeAnimation();
             });
         }
     }
 
     Ticker.prototype.animate = function() {
-        //Magic trick - Swap 1st object once invisible
-        var first = this.links[0];
-        if (Math.abs(this.offset) > first.offsetWidth + first.offsetLeft) {
-            first.parentElement.style.paddingLeft =
-                first.offsetWidth + first.offsetLeft + 5 + "px";
-            first.parentElement.appendChild(first);
-            //update link list
-            this.links = document
-                .querySelector(this.query)
-                .querySelectorAll(".google-links");
-        }
-        //Translate links
-        for (var i = 0; i < this.links.length; i++) {
-            this.links[i].style.transform = "translateX(" + this.offset + "px)";
-        }
-        this.offset -= 1;
-        //keep going
-        if (this.animationPlaying) {
+        if (this.animationStatus == "playing") {
+            //translate links
+            for (var i = 0; i < this.links.length; i++) {
+                this.links.eq(i).css({
+                    transform: "translateX(" + this.offset + "px)"
+                });
+            }
+            this.offset -= 2;
+            //swap hidden elements
+            var first = this.links.eq(0);
+            var firstSize = Math.floor(
+                first.width() + 2 * parseInt(first.css("padding-left"))
+            );
+            if (Math.abs(this.offset) >= firstSize) {
+                console.log(firstSize);
+                this.offset = 0;
+                first.parent().append(first);
+                //update link list
+                this.links = $(this.query + " .google-links");
+            }
+            //call next frame
             var self = this;
-            this.currentFrame = window.requestAnimationFrame(function() {
+            this.currentFrame = requestAnimationFrame(function() {
                 self.animate();
             });
         }
     };
 
     Ticker.prototype.startAnimation = function() {
-        if (!this.animationPlaying) {
-            this.animationPlaying = true;
-            var self = this;
-            this.currentFrame = window.requestAnimationFrame(function() {
-                self.animate();
-            });
+        this.animationStatus = "playing";
+        var self = this;
+        this.currentFrame = requestAnimationFrame(function() {
+            self.animate();
+        });
+    };
+
+    Ticker.prototype.pauseAnimation = function() {
+        if (this.animationStatus == "playing") {
+            this.animationStatus = "paused";
+            cancelAnimationFrame(this.currentFrame);
         }
     };
 
-    Ticker.prototype.stopAnimation = function() {
-        if (this.animationPlaying) {
-            this.animationPlaying = false;
-            window.cancelAnimationFrame(this.currentFrame);
+    Ticker.prototype.resumeAnimation = function() {
+        if (this.animationStatus == "paused") {
+            this.startAnimation();
         }
     };
 
