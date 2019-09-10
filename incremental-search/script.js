@@ -11,7 +11,9 @@
             var country = countries[i].toLowerCase();
 
             if (txt && country.indexOf(txt) === 0) {
-                $("#results").append('<p class="result">' + country + "</p>");
+                $("#results").append(
+                    '<p class="result">' + countries[i] + "</p>"
+                );
             }
 
             if ($(".result").length === 4) {
