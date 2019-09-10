@@ -1,41 +1,42 @@
 (function(countries) {
+    function getResults() {
+        $("#results").empty();
+
+        var txt = $("#country")
+            .val()
+            .toLowerCase();
+
+        var limit = false;
+        for (var i = 0; i < countries.length && !limit; i++) {
+            var country = countries[i].toLowerCase();
+
+            if (txt && country.indexOf(txt) === 0) {
+                $("#results").append('<p class="result">' + country + "</p>");
+            }
+
+            if ($(".result").length === 4) {
+                limit = true; //show max 4 countries
+            }
+        }
+
+        if (txt && $(".result").length === 0) {
+            $("#results").append('<p class="result">no countries</p>');
+        } else {
+            $(".result")
+                .on("mouseover", function(e) {
+                    $(".result").removeClass("highlight");
+                    $(e.target).addClass("highlight");
+                })
+                .on("mousedown", function(e) {
+                    $("#country").val($(e.target).text());
+                    $("#results").empty();
+                });
+        }
+    }
+
     $("#country")
-        .on("input", function() {
-            $("#results").empty();
-
-            var txt = $("#country")
-                .val()
-                .toLowerCase();
-
-            var limit = false;
-            for (var i = 0; i < countries.length && !limit; i++) {
-                var country = countries[i].toLowerCase();
-
-                if (txt && country.indexOf(txt) === 0) {
-                    $("#results").append(
-                        '<p class="result">' + country + "</p>"
-                    );
-                }
-
-                if ($(".result").length === 4) {
-                    limit = true; //show max 4 countries
-                }
-            }
-
-            if (txt && $(".result").length === 0) {
-                $("#results").append('<p class="result">no countries</p>');
-            } else {
-                $(".result")
-                    .on("mouseover", function(e) {
-                        $(".result").removeClass("highlight");
-                        $(e.target).addClass("highlight");
-                    })
-                    .on("mousedown", function(e) {
-                        $("#country").val($(e.target).text());
-                        $("#results").empty();
-                    });
-            }
-        })
+        .on("input", getResults)
+        .on("focus", getResults)
         .on("keydown", function(e) {
             var sel = $(".result.highlight");
 
