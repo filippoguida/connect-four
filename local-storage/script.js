@@ -1,12 +1,20 @@
 (function() {
     var txt = document.getElementById("txt");
     txt.addEventListener("input", function() {
-        window.localStorage.setItem("txt", txt.value);
+        try {
+            window.localStorage.setItem("txt", txt.value);
+        } catch (e) {
+            console.log(e);
+        }
     });
 
     var btn = document.getElementById("clear");
     btn.addEventListener("click", function() {
-        window.localStorage.removeItem("txt");
+        try {
+            window.localStorage.removeItem("txt");
+        } catch (e) {
+            console.log(e);
+        }
     });
 
     try {
