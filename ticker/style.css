@@ -10,7 +10,7 @@ body {
     padding: 10px;
 }
 
-.google-links {
+.ticker a {
     display: inline-block;
     font-family: monospace;
     font-weight: bold;
@@ -20,7 +20,7 @@ body {
     color: black;
 }
 
-.google-links:hover {
+.ticker a:hover {
     text-decoration: underline;
 }
 

@@ -1,43 +1,42 @@
 (function() {
-    function Ticker(tickerQuery) {
-        this.query = tickerQuery;
-        this.links = $(this.query + " .google-links");
-
+    function Ticker(container, links) {
+        this.container = container;
         this.animationStatus = "stop";
         this.offset = 0;
 
-        for (var i = 0; i < this.links.length; i++) {
-            var self = this;
-            this.links.eq(i).on("mouseover", function() {
-                self.pauseAnimation();
-            });
-            this.links.eq(i).on("mouseout", function() {
-                self.resumeAnimation();
-            });
-        }
+        var self = this; //when are we going to use lambda functions :( ?
+        links.forEach(function(link) {
+            console.log(link);
+            var anchor = $("<a href=" + link.url + ">" + link.text + "</a>");
+            anchor
+                .on("mouseover", function() {
+                    self.pauseAnimation();
+                })
+                .on("mouseout", function() {
+                    self.resumeAnimation();
+                });
+            container.append(anchor);
+        });
     }
 
     Ticker.prototype.animate = function() {
         if (this.animationStatus == "playing") {
             //swap hidden elements
-            var first = this.links.eq(0);
-            var firstSize = Math.floor(
-                first.width() + 2 * parseInt(first.css("padding-left"))
-            );
+            var first = $(this.container)
+                    .children()
+                    .eq(0),
+                firstSize = Math.floor(
+                    first.width() + 2 * parseInt(first.css("padding-left"))
+                );
             if (Math.abs(this.offset) >= firstSize) {
-                console.log(firstSize);
                 this.offset = 4;
-                first.parent().append(first);
-                //update link list
-                this.links = $(this.query + " .google-links");
+                this.container.append(first);
             }
 
             //translate links
-            for (var i = 0; i < this.links.length; i++) {
-                this.links.eq(i).css({
-                    transform: "translateX(" + this.offset + "px)"
-                });
-            }
+            this.container.children().css({
+                transform: "translateX(" + this.offset + "px)"
+            });
             this.offset -= 1;
 
             //call next frame
@@ -69,6 +68,15 @@
         }
     };
 
-    new Ticker(".top").startAnimation();
-    new Ticker(".bottom").startAnimation();
+    $.ajax({
+        url: "http://localhost:8080/links.json",
+        method: "GET",
+        data: {
+            limit: 20
+        },
+        success: function(objects) {
+            new Ticker($(".top"), objects[0].links).startAnimation();
+            new Ticker($(".bottom"), objects[1].links).startAnimation();
+        }
+    });
 })();
