@@ -11,30 +11,30 @@
         try {
             var num = askForNumber();
             if (num == 1) {
-                alert("wa'");
+                return "wa'";
             } else if (num == 2) {
-                alert("cha'");
+                return "cha'";
             } else if (num == 3) {
-                alert("wej");
+                return "wej";
             } else if (num == 4) {
-                alert("loS");
+                return "loS";
             } else if (num == 5) {
-                alert("vagh");
+                return "vagh";
             } else if (num == 6) {
-                alert("jav");
+                return "jav";
             } else if (num == 7) {
-                alert("Soch");
+                return "Soch";
             } else if (num == 8) {
-                alert("chorgh");
+                return "chorgh";
             } else if (num == 9) {
-                alert("Hut");
+                return "Hut";
             } else if (num == 10) {
-                alert("maH");
+                return "maH";
             }
         } catch (Error) {
             alert("Bad number, try again: [0, 10]");
-            translateNumberKlingon();
+            return translateNumberKlingon();
         }
     }
-    translateNumberKlingon();
+    console.log(translateNumberKlingon());
 })();
