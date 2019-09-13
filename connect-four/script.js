@@ -42,7 +42,7 @@
 
     function getDiagonalsAsString(reqRow, reqCol) {
         var r, c;
-        console.log(boardStatus);
+
         var diagLR = "";
         r = reqRow;
         c = reqCol;
@@ -74,7 +74,7 @@
             r++;
             c--;
         }
-        console.log([diagRL, diagLR]);
+
         return [diagRL, diagLR];
     }
 
@@ -84,34 +84,25 @@
         //row
         var row = getRowAsString(r);
         if (row.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
-            return true;
+            gameOver(currentPlayer);
         }
 
         //col
         var col = getColAsString(r);
         if (col.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
-            return true;
+            gameOver(currentPlayer);
         }
 
         //diagonal
         var diags = getDiagonalsAsString(r, c);
         if (diags[0].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
-            return true;
+            gameOver(currentPlayer);
         }
         if (diags[1].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
-            return true;
+            gameOver(currentPlayer);
         }
 
         //not there yet
-        return false;
-    }
-
-    function switchPlayers() {
-        if (currentPlayer == 1) {
-            currentPlayer = 2;
-        } else {
-            currentPlayer = 1;
-        }
     }
 
     var gameOverFlag = false;
@@ -123,7 +114,28 @@
         gameOverFlag = true;
     }
 
-    //DOM JQuery - board generation
+    function move(selectedColumn) {
+        var emptySlotRow = getColAsString(selectedColumn).indexOf("0");
+        if (emptySlotRow != -1) {
+            boardStatus[selectedColumn][emptySlotRow] = currentPlayer;
+            updateBoard();
+            checkForVictory(emptySlotRow, selectedColumn);
+            switchPlayers();
+        }
+    }
+
+    function switchPlayers() {
+        if (currentPlayer == 1) {
+            currentPlayer = 2;
+            if (player2Robot) {
+                nextRobotMove();
+            }
+        } else {
+            currentPlayer = 1;
+        }
+    }
+
+    //DOM - board generation
     function drawBoard() {
         $(".slot").remove(); //clear
 
@@ -160,23 +172,52 @@
         }
     }
 
-    //Event handlers
+    //remote AI player - http://kevinalbs.com/connect4/back-end/info.html
+    var player2Robot = true;
+    function embedBoardStatus() {
+        var board_data = "";
+        for (var r = numOfRows; r > 0; r--) {
+            for (var c = 0; c < numOfCols; c++) {
+                board_data += boardStatus[c][r - 1];
+            }
+        }
+        console.log(board_data);
+        return board_data;
+    }
+
+    function nextRobotMove() {
+        $.ajax({
+            url: "http://kevinalbs.com/connect4/back-end/index.php/getMoves",
+            method: "GET",
+            data: {
+                board_data: embedBoardStatus(),
+                player: 2
+            },
+            success: function(data) {
+                console.log(data);
+                data = JSON.parse(data);
+                console.log(Object.values(data));
+                console.log(Object.keys(data).join(""));
+                var selectedColumn = Object.values(data).indexOf(
+                    Math.max.apply(null, Object.values(data))
+                );
+                console.log(selectedColumn);
+                move(selectedColumn);
+            }
+        });
+    }
+
+    //Real Player - Event handlers
     $(".slot").on("click", function(e) {
         if (gameOverFlag) {
             return;
         }
 
-        var selectedColumn = $(e.currentTarget).css("grid-column-start") - 1;
-        var emptySlotRow = getColAsString(selectedColumn).indexOf("0");
-        if (emptySlotRow != -1) {
-            boardStatus[selectedColumn][emptySlotRow] = currentPlayer;
-            updateBoard();
-
-            if (checkForVictory(emptySlotRow, selectedColumn)) {
-                gameOver(currentPlayer);
-            }
-
-            switchPlayers();
+        if (currentPlayer == "player2" && player2Robot) {
+            return;
         }
+
+        var selectedColumn = $(e.currentTarget).css("grid-column-start") - 1;
+        move(selectedColumn);
     });
 })();
