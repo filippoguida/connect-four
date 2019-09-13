@@ -88,7 +88,7 @@
         }
 
         //col
-        var col = getColAsString(r);
+        var col = getColAsString(c);
         if (col.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
             gameOver(currentPlayer);
         }
@@ -125,7 +125,7 @@
     }
 
     function switchPlayers() {
-        if (currentPlayer == 1) {
+        if (currentPlayer === 1) {
             currentPlayer = 2;
             if (player2Robot) {
                 nextRobotMove();
@@ -181,7 +181,6 @@
                 board_data += boardStatus[c][r - 1];
             }
         }
-        console.log(board_data);
         return board_data;
     }
 
@@ -194,10 +193,7 @@
                 player: 2
             },
             success: function(data) {
-                console.log(data);
                 data = JSON.parse(data);
-                console.log(Object.values(data));
-                console.log(Object.keys(data).join(""));
                 var selectedColumn = Object.values(data).indexOf(
                     Math.max.apply(null, Object.values(data))
                 );
@@ -213,7 +209,7 @@
             return;
         }
 
-        if (currentPlayer == "player2" && player2Robot) {
+        if (currentPlayer === 2 && player2Robot) {
             return;
         }
 
