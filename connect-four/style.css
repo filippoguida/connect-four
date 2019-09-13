@@ -1,50 +1,51 @@
 * {
-   box-sizing: border-box;
+    box-sizing: border-box;
 }
 /* Background */
 body {
-   background: #f1f2f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Board */
-#board {
-   display: flex;
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+/* Game Elements */
+#connect-four {
+    display: grid;
+    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: repeat(7, 100px);
 }
 
 /* Slots */
 .slot {
-   width: 100px;
-   height: 100px;
-   overflow: hidden;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
 }
 
 .hole {
-   width: 160px;
-   height: 160px;
-   border-radius: 80px;
-   position: relative;
-   left: -30px;
-   top: -30px;
-   border: 40px blue solid;
-   -webkit-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
-   -moz-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
-   box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+    position: relative;
+    left: -30px;
+    top: -30px;
+    border: 40px blue solid;
+    -webkit-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
 }
 
 .player1 {
-   background-color: red;
-   -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-   -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-   box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    background-color: red;
+    -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
 }
 
 .player2 {
-   background-color: #fed330;
-   -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-   -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-   box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    background-color: #fed330;
+    -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
 }

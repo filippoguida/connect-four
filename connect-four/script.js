@@ -1,10 +1,113 @@
 (function() {
-    var currentPlayer = "player1";
+    //matrix functions
+    var boardStatus = [];
+    function initBoardStatus() {
+        boardStatus = [];
+        for (var c = 0; c < 7; c++) {
+            boardStatus[c] = new Array(6);
+            for (var r = 0; r < 6; r++) {
+                boardStatus[c][r] = 0;
+            }
+        }
+    }
+    initBoardStatus();
+
+    function getRowAsString(reqRow) {
+        var row = "";
+        for (var c = 0; c < 7; c++) {
+            for (var r = 0; r < 6; r++) {
+                if (r === reqRow) {
+                    row += boardStatus[c][r];
+                }
+            }
+        }
+        return row;
+    }
+
+    function getColAsString(reqCol) {
+        var col = "";
+        for (var c = 0; c < 7; c++) {
+            for (var r = 0; r < 6; r++) {
+                if (c == reqCol) {
+                    col += boardStatus[c][r];
+                }
+            }
+        }
+        return col;
+    }
+
+    function getDiagonalsAsString(reqRow, reqCol) {
+        var r, c;
+
+        var diagLR = "";
+        r = reqRow;
+        c = reqCol;
+        while (r < 6 && c < 7) {
+            diagLR += boardStatus[c][r];
+            r++;
+            c++;
+        }
+        r = reqRow;
+        c = reqCol;
+        while (r > 0 && c > 0) {
+            diagLR = boardStatus[c][r] + diagLR;
+            r--;
+            c--;
+        }
+
+        var diagRL = "";
+        r = reqRow;
+        c = reqCol;
+        while (r > 0 && c < 7) {
+            diagRL += boardStatus[c][r];
+            r--;
+            c++;
+        }
+        r = reqRow;
+        c = reqCol;
+        while (r < 6 && c > 0) {
+            diagRL = boardStatus[c][r] + diagRL;
+            r++;
+            c--;
+        }
+
+        return [diagRL, diagLR];
+    }
+
+    //game logic
+    var currentPlayer = 1;
+    function checkForVictory(r, c) {
+        //row
+        var row = getRowAsString(r);
+        if (row.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
+            return true;
+        }
+
+        //col
+        var col = getColAsString(r);
+        if (col.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
+            return true;
+        }
+
+        //diagonal
+        var diags = getDiagonalsAsString(r, c);
+
+        if (diags[0].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
+            return true;
+        }
+        if (diags[1].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
+            return true;
+        }
+
+        //not there yet
+        return false;
+    }
+
     function switchPlayers() {
-        if (currentPlayer == "player1") {
-            currentPlayer = "player2";
+        if (currentPlayer == 1) {
+            currentPlayer = 2;
         } else {
-            currentPlayer = "player1";
+            currentPlayer = 1;
         }
     }
 
@@ -17,110 +120,61 @@
         gameOverFlag = true;
     }
 
-    function checkForVictory(slotsInCol, slotsInRow) {
-        console.log(currentPlayer);
-        //vertical
-        var slots = slotsInCol;
-        var count = 0;
-        for (var i = 0; i < slots.length; i++) {
-            if (slots.eq(i).hasClass(currentPlayer)) {
-                count++;
-                if (count == 4) {
-                    return true;
-                }
-            } else {
-                count = 0;
+    //DOM JQuery - board generation
+    function drawBoard() {
+        $(".slot").remove(); //clear
+
+        for (var c = 0; c < 7; c++) {
+            for (var r = 0; r < 6; r++) {
+                $("#connect-four").append(
+                    "<div " +
+                        'class="slot player' +
+                        boardStatus[c][r] +
+                        " row" +
+                        (r + 1) +
+                        " col" +
+                        (c + 1) +
+                        '" style="grid-column:' +
+                        (c + 1) +
+                        "; grid-row: " +
+                        (r + 1) +
+                        '" ><div class="hole"></div></div>'
+                );
             }
         }
+    }
+    drawBoard();
 
-        //horizontal
-        slots = slotsInRow;
-        count = 0;
-        for (var j = 0; j < slots.length; j++) {
-            if (slots.eq(j).hasClass(currentPlayer)) {
-                count++;
-                if (count == 4) {
-                    return true;
-                }
-            } else {
-                count = 0;
+    function updateBoard() {
+        for (var c = 0; c < 7; c++) {
+            for (var r = 0; r < 6; r++) {
+                console.log(".slot.row" + (7 - r) + ".col" + (8 - c));
+                $(".slot.row" + (6 - r) + ".col" + (c + 1))
+                    .removeClass("player0")
+                    .removeClass("player1")
+                    .removeClass("player2")
+                    .addClass("player" + boardStatus[c][r]);
             }
         }
-
-        //diagonal
-        var diagonalVictories = [
-            [0, 7, 14, 21],
-            [1, 8, 15, 22],
-            [2, 9, 16, 23],
-            [3, 8, 13, 18],
-            [4, 9, 14, 19],
-            [5, 10, 15, 20],
-            [6, 13, 20, 27],
-            [7, 14, 21, 28],
-            [8, 15, 22, 29],
-            [9, 14, 19, 24],
-            [10, 15, 20, 25],
-            [11, 16, 21, 26],
-            [12, 19, 26, 33],
-            [13, 20, 27, 34],
-            [14, 21, 28, 35],
-            [15, 20, 25, 30],
-            [16, 21, 26, 31],
-            [17, 22, 27, 32],
-            [18, 25, 32, 39],
-            [19, 26, 33, 40],
-            [20, 27, 34, 41],
-            [22, 27, 32, 37],
-            [23, 28, 33, 38],
-            [21, 26, 31, 36]
-        ];
-
-
-        for (var k = 0; k < diagonalVictories.length; k++) {
-            count = 0;
-            for (var g = 0; g < diagonalVictories[k].length; g++) {
-                var slotIndex = diagonalVictories[k][g];
-                if(!$(".slot").eq(slotIndex).hasClass(currentPlayer)) {
-                    break;
-                }
-                count++;
-            }
-            if(count==4){
-                return true;
-            }
-        }
-        return false;
     }
 
-    $(".column").on("click", function(e) {
+    //Event handlers
+    $(".slot").on("click", function(e) {
         if (gameOverFlag) {
             return;
         }
 
-        var foundAnEmptySlot = false;
-        var col = $(e.currentTarget);
-        var slotsInCol = col.find(".slot");
-        for (var i = 5; i >= 0; i--) {
-            if (
-                !slotsInCol.eq(i).hasClass("player1") &&
-                !slotsInCol.eq(i).hasClass("player2")
-            ) {
-                foundAnEmptySlot = true;
-                break;
+        var selectedColumn = $(e.currentTarget).css("grid-column-start") - 1;
+        var emptySlotRow = getColAsString(selectedColumn).indexOf("0");
+        if (emptySlotRow != -1) {
+            boardStatus[selectedColumn][emptySlotRow] = currentPlayer;
+            updateBoard();
+
+            if (checkForVictory(emptySlotRow, selectedColumn)) {
+                gameOver(currentPlayer);
             }
-        }
-        if (!foundAnEmptySlot) {
-            return;
-        }
-        slotsInCol.eq(i).addClass(currentPlayer);
 
-        if (
-            checkForVictory(col.find(".slot"), $(".row" + i))
-        ) {
-            gameOver(currentPlayer);
+            switchPlayers();
         }
-
-        switchPlayers();
     });
-
 })();
