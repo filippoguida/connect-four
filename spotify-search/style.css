@@ -1,0 +1,28 @@
+* {
+    font-family: "Arial", sans-serif;
+}
+
+#searchtools {
+    margin: 30px;
+}
+
+#resultsfor {
+    margin: 30px;
+    font-weight: bold;
+}
+
+.result {
+    display: flex;
+    align-items: stretch;
+    margin: 30px;
+}
+
+.result img {
+    width: 80px;
+    height: 80px;
+}
+
+.result p {
+    font-size: 12pt;
+    margin-left: 50px;
+}
