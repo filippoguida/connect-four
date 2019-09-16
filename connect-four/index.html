@@ -4,10 +4,37 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="./assets/NexusUI.js"></script>
+        <script src="./assets/Tone.js"></script>
     </head>
     <body>
-        <div id="connect-four"></div>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <div id="connect4" class="hidden">
+            <div id="scale-container">
+                <div class="round-corners">
+                    <div id="scale-sel"></div>
+                </div>
+            </div>
+            <div class="round-corners" id="board"></div>
+            <div class="round-corners" id="piano-container">
+                <div id="piano"></div>
+            </div>
+            <div id="single-multi-container">
+                <div id="robot-icon"></div>
+                <div id="single-multi-toggle"></div>
+                <div id="second-player-icon"></div>
+            </div>
+        </div>
+        <div id="startgame" class="snapshot visible">
+            <div class="start-button">
+                <h1>Connect Four</h1>
+                <h2>Ear training version</h2>
+                <p>- click to start - </p>
+            </div>
+        </div
+        <div id="startgame" class="snapshot hidden">
+            <div class="start-button"></div>
+        </div>
         <script src="script.js" charset="utf-8"></script>
     </body>
 </html>

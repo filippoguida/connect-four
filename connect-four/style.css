@@ -1,51 +1,151 @@
 * {
     box-sizing: border-box;
 }
-/* Background */
+
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #222;
+    overflow: hidden;
 }
 
-/* Game Elements */
-#connect-four {
-    display: grid;
-    grid-template-rows: repeat(6, 100px);
-    grid-template-columns: repeat(7, 100px);
+#connect4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    overflow: hidden;
+    opacity: 0;
 }
 
-/* Slots */
-.slot {
+#scale-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 50px 0px;
+}
+
+#scale-sel {
     width: 100px;
     height: 100px;
+    transition: all 2s ease-out;
+}
+
+#piano-container {
+    width: 705px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 5px;
+    user-select: none;
+    margin: 50px 0px;
+}
+
+#single-multi-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 300px;
+    margin: 50px 0px;
+}
+
+#single-multi-toggle {
+    display: inline-block;
+    margin: 60px;
+}
+
+#robot-icon {
+    background: url("assets/robot.png");
+    background-size: contain;
+    filter: invert(1);
+    width: 150px;
+    height: 150px;
+}
+
+#second-player-icon {
+    background: url("assets/yoda.png");
+    background-size: contain;
+    filter: invert(1);
+    width: 150px;
+    height: 150px;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(7, 100px);
+    grid-template-columns: repeat(7, 100px);
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 50px;
+    box-shadow: 0px 0px 60px 10px rgba(0.3, 10, 10, 0.1);
+}
+
+.slot {
     overflow: hidden;
 }
 
 .hole {
-    width: 160px;
-    height: 160px;
-    border-radius: 80px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
     position: relative;
-    left: -30px;
-    top: -30px;
-    border: 40px blue solid;
-    -webkit-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
-    -moz-box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
+    left: -40px;
+    top: -40px;
+    border: 50px #333 solid;
     box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
 }
 
 .player1 {
-    background-color: red;
-    -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-    box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    background-color: #2bb;
+    box-shadow: inset 10px 9px 29px -9px rgba(0.3, 0.3, 0.3, 0.63);
+    transition: all 0.5s ease-out;
 }
 
 .player2 {
-    background-color: #fed330;
-    -webkit-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
-    -moz-box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    background-color: #b22;
     box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    transition: all 2s ease-out;
+}
+
+.round-corners {
+    border-radius: 30px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.snapshot {
+    width: 100%;
+    height: 100%;
+}
+
+.snapshot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.snapshot * {
+    font-family: monospace;
+    color: white;
+    margin: 100px;
+}
+
+.snapshot h1 {
+    font-size: 60pt;
+}
+
+.snapshot h2 {
+    font-size: 30pt;
+}
+
+.snapshot p {
+    font-size: 20pt;
 }
