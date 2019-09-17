@@ -2,6 +2,7 @@
     //-Spootify search
     var url = "https://elegant-croissant.glitch.me/spotify";
     var page = 0;
+    var hasNext;
 
     function spotifySearch(q, type, offset = 0, limit = 20) {
         $.ajax(url, {
@@ -11,12 +12,12 @@
                 offset: offset,
                 limit: limit
             },
-            success: function(payload) {
-                appendResults(payload.artists.items);
-                if (payload.artists.next) {
-                    page++;
+            success: function(data) {
+                appendResults(data.artists.items);
+                if (data.artists.next) {
+                    hasNext = true;
                 } else {
-                    page = null;
+                    hasNext = false;
                 }
             }
         });
@@ -39,7 +40,7 @@
         }
     }
 
-    //-
+    //- Click Handlers
     $("#searchbutton").on("click", function() {
         $("#resultsfor")
             .empty()
@@ -49,24 +50,43 @@
     });
 
     $("#searchbar").on("keydown", function(e) {
-        $("#resultsfor")
-            .empty()
-            .append("Results for: " + $("#searchbar").val());
-        $("#results").empty();
-        spotifySearch($("#searchbar").val(), $("#searchtype").val());
-    });
-
-    $(window).on("scroll", function() {
-        var scrollHeight = $(document).height();
-        var scrollPosition = $(window).height() + $(window).scrollTop();
-        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
-            if (page) {
-                spotifySearch(
-                    $("#searchbar").val(),
-                    $("#searchtype").val(),
-                    page * 20
-                );
-            }
+        if (e.keyCode === 13) {
+            $("#resultsfor")
+                .empty()
+                .append("Results for: " + $("#searchbar").val());
+            $("#results").empty();
+            spotifySearch($("#searchbar").val(), $("#searchtype").val());
         }
     });
+
+    //- Scroll Handler - Debounce Strategy
+    if (document.URL.indexOf("scroll=infinite") != -1) {
+        var timerId;
+        function scrollHandler() {
+            if (hasNext) {
+                var scrollHeight = $(document).height();
+                var scrollPosition = $(window).height() + $(window).scrollTop();
+                if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                    //search for next results
+                    page++;
+                    spotifySearch(
+                        $("#searchbar").val(),
+                        $("#searchtype").val(),
+                        page * 20
+                    );
+                }
+            }
+        }
+
+        function dScrollHandler(delay, fn) {
+            if (timerId) {
+                clearTimeout(timerId);
+            }
+            timerId = setTimeout(fn, delay);
+        }
+
+        $(window).on("scroll", function() {
+            dScrollHandler(500, scrollHandler);
+        });
+    }
 })();
