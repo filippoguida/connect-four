@@ -1,5 +1,16 @@
 (function() {
-    //-Spootify search
+    //-Handlebars Compiler Call
+    Handlebars.templates = Handlebars.templates || {};
+
+    var templates = document.querySelectorAll(
+        'script[type="text/x-handlebars-template"]'
+    );
+
+    Array.prototype.slice.call(templates).forEach(function(script) {
+        Handlebars.templates[script.id] = Handlebars.compile(script.innerHTML);
+    });
+
+    //-Spotify search
     var url = "https://elegant-croissant.glitch.me/spotify";
     var page = 0;
     var hasNext;
@@ -13,8 +24,9 @@
                 limit: limit
             },
             success: function(data) {
-                appendResults(data.artists.items);
-                if (data.artists.next) {
+                type = type.toLowerCase() + "s"; //one S to rule them all
+                appendResults(data, type);
+                if (data[type].next) {
                     hasNext = true;
                 } else {
                     hasNext = false;
@@ -23,21 +35,14 @@
         });
     }
 
-    function appendResults(results) {
-        for (var i = 0; i < results.length; i++) {
-            if (results[i].images[0]) {
-                $("#results").append(
-                    '<div class="result">' +
-                        '<img src="' +
-                        results[i].images[0].url +
-                        '"/>' +
-                        "<p>" +
-                        results[i].name +
-                        "</p>" +
-                        "</div>"
-                );
-            }
-        }
+    var tempData = { items: [] };
+    function appendResults(data, type) {
+        tempData.items = tempData.items.concat(
+            data[type].items.filter(function(obj) {
+                return obj.images.length != 0;
+            })
+        );
+        $("#results-spotify").html(Handlebars.templates.result(tempData));
     }
 
     //- Click Handlers
@@ -45,7 +50,7 @@
         $("#resultsfor")
             .empty()
             .append("Results for: " + $("#searchbar").val());
-        $("#results").empty();
+        tempData.items = [];
         spotifySearch($("#searchbar").val(), $("#searchtype").val());
     });
 
@@ -55,6 +60,7 @@
                 .empty()
                 .append("Results for: " + $("#searchbar").val());
             $("#results").empty();
+            tempData.items = [];
             spotifySearch($("#searchbar").val(), $("#searchtype").val());
         }
     });
@@ -66,7 +72,7 @@
             if (hasNext) {
                 var scrollHeight = $(document).height();
                 var scrollPosition = $(window).height() + $(window).scrollTop();
-                if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                if (Math.floor(scrollHeight - scrollPosition) === 0) {
                     //search for next results
                     page++;
                     spotifySearch(

@@ -11,18 +11,25 @@
     font-weight: bold;
 }
 
-.result {
+.card {
     display: flex;
     align-items: stretch;
     margin: 30px;
 }
 
-.result img {
+.card img {
     width: 80px;
     height: 80px;
+    object-fit: cover;
 }
 
-.result p {
+.card a {
+    color: black;
+    text-decoration: none;
     font-size: 12pt;
     margin-left: 50px;
+}
+
+.card a:hover {
+    text-decoration: underline;
 }
