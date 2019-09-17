@@ -1,4 +1,4 @@
-(function(UI, Tone) {
+(function(Nexus, Tone) {
     //specifications
     var numOfRows = 7;
     var numOfCols = 7;
@@ -114,27 +114,21 @@
         gameOverFlag = true;
     }
 
+    var movesHistory = [];
     function move(selectedColumn) {
         var emptySlotRow = getColAsString(selectedColumn).indexOf("0");
         if (emptySlotRow != -1) {
             boardStatus[selectedColumn][emptySlotRow] = currentPlayer;
+            movesHistory.push(selectedColumn);
             updateBoard();
             checkForVictory(emptySlotRow, selectedColumn);
             switchPlayers();
         }
-
-        synth.triggerAttackRelease(
-            twelveNoteScale[scale[selectedColumn]],
-            "8n"
-        );
     }
 
     function switchPlayers() {
         if (currentPlayer === 1) {
             currentPlayer = 2;
-            if (player2Robot) {
-                nextRobotMove();
-            }
         } else {
             currentPlayer = 1;
         }
@@ -178,7 +172,6 @@
     }
 
     //remote AI player - http://kevinalbs.com/connect4/back-end/info.html
-    var player2Robot = true;
     function embedBoardStatus() {
         var board_data = "";
         for (var r = numOfRows; r > 0; r--) {
@@ -195,96 +188,19 @@
             method: "GET",
             data: {
                 board_data: embedBoardStatus(),
-                player: 2
+                player: currentPlayer
             },
-            success: function(data) {
-                data = JSON.parse(data);
-                var selectedColumn = Object.values(data).indexOf(
-                    Math.max.apply(null, Object.values(data))
+            success: function(payload) {
+                payload = JSON.parse(payload);
+                var selectedColumn = Object.values(payload).indexOf(
+                    Math.max.apply(null, Object.values(payload))
                 );
                 move(selectedColumn);
+                if (!gameOverFlag) setTimeout(nextRobotMove, 200);
             }
         });
     }
 
-    new UI.Toggle("#single-multi-toggle", {
-        size: [200, 100],
-        event: function(e) {
-            player2Robot = !e;
-        }
-    });
-
-    //Real Player - Event handlers
-    $(".slot").on("click", function(e) {
-        if (gameOverFlag) {
-            return;
-        }
-
-        if (currentPlayer == 2 && player2Robot) {
-            return;
-        }
-
-        var selectedColumn = $(e.currentTarget).css("grid-column-start") - 1;
-        move(selectedColumn);
-    });
-
-    //Ear training features
-    var twelveNoteScale = [
-        "C3",
-        "C#3",
-        "D3",
-        "D#3",
-        "E3",
-        "F3",
-        "G3",
-        "G#3",
-        "A3",
-        "A#3",
-        "B3"
-    ];
-    var scales = {
-        major: [0, 2, 4, 5, 7, 9, 11],
-        minor: [0, 2, 3, 5, 7, 8, 10]
-    };
-    var scale = scales.major;
-
-    new UI.Select("#scale-sel", {
-        size: [500, 100],
-        options: Object.keys(scales),
-        event: function(e) {
-            scale = scales[e.value];
-        }
-    });
-    $("#scale-player").on("click", function() {
-        for (var i = 0; i < scale.length; i++) {}
-    });
-
-    var piano = new UI.Piano("#piano", {
-        size: [800, 280],
-        mode: "impulse",
-        lowNote: 60,
-        highNote: 72,
-        event: function(e) {
-            if (e.state) {
-                for (var i = 0; i < scale.length; i++) {
-                    if (e.note % 12 == scale[i]) {
-                        var selectedColumn = i;
-                        move(selectedColumn);
-                    }
-                }
-            }
-        }
-    });
-
-    //snapshot and audio context
-    var synth;
-    $("#startgame").on("click", function() {
-        Tone.context.resume();
-        synth = new Tone.FMSynth().toMaster();
-
-        $("#startgame").animate({ opacity: 0, top: "-100%" }, 300);
-        setTimeout(function() {
-            $("#connect4").animate({ opacity: 1 }, 2500);
-        }, 300);
-    });
+    //start game
+    nextRobotMove();
 })(Nexus, Tone);
