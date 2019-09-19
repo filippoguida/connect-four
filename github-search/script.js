@@ -1,6 +1,6 @@
 (function() {
     //- Custom events - lag managment
-    var ajaxRequests = new Event("lastajaxreceived");
+    new Event("lastajaxreceived");
 
     //- html pre compiler
     Handlebars.templates = Handlebars.templates || {};
@@ -25,8 +25,9 @@
             },
             success: function(data) {
                 repos = data;
-                repos.forEach(repo => {
-                    getCommits(username, password, repo, true);
+                repos.forEach((repo, i) => {
+                    let isLast = i == repos.length - 1;
+                    getCommits(username, password, repo, isLast);
                 });
             },
             error: errorMessages
