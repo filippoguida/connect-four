@@ -10,7 +10,6 @@ function logSizes(path) {
         (err, files) => {
             if (err) {
                 console.log(err);
-                return;
             } else {
                 for (let f of files) {
                     if (f.isFile()) {
