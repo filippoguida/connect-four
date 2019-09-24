@@ -52,12 +52,9 @@ exports.get = function(url) {
                 err: "Forbidden"
             };
         } else {
-            if (!fs.existsSync(contentPath)) {
-                console.log(contentPath);
-                return {
-                    err: "Not Found"
-                };
-            }
+            return {
+                err: "Not Found"
+            };
         }
     } else {
         return content;
