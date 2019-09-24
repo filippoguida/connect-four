@@ -18,6 +18,10 @@ http.createServer((req, res) => {
         res.statusCode = 405;
         res.end();
     } else {
+        if (url == "/") {
+            return res.end(contents.getListHTML());
+        }
+
         const content = contents.get(url);
         if (content.err) {
             if (content.err == "Forbidden") {

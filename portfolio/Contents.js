@@ -13,13 +13,16 @@ function mapContentsSync(dirPath, obj) {
             const fileUrl = `${dirPath.replace(contentsDir, "")}/${file.name}`;
             map[fileUrl] = {
                 path: `${dirPath}/${file.name}`,
-                contentType: getContentType(file)
+                contentType: getContentType(file),
+                isProjectFolder: false
             };
         } else if (file.isDirectory()) {
             const fileUrl = `/${file.name}`;
             map[fileUrl] = {
                 path: `${dirPath}/${file.name}/index.html`,
-                contentType: "text/html"
+                contentType: "text/html",
+                isProjectFolder: true,
+                projectName: file.name
             };
             mapContentsSync(`${dirPath}/${file.name}`, map);
         }
@@ -59,4 +62,16 @@ exports.get = function(url) {
     } else {
         return content;
     }
+};
+
+exports.getListHTML = function() {
+    var body = "<html><ul>";
+    Object.keys(contents).forEach(url => {
+        let content = contents[url];
+        if (content.isProjectFolder) {
+            body += `<li><a href="${url}">${content.projectName}</a></li>`;
+        }
+    });
+    body += "</ul></html>";
+    return body;
 };
