@@ -3,17 +3,7 @@ const path = require("path");
 const contentTypes = require(`${__dirname}/contentTypes.json`);
 const contentsDir = path.normalize(`${__dirname}/projects`);
 
-function getContentType(file) {
-    return (
-        contentTypes[
-            path
-                .extname(file.name)
-                .toLowerCase()
-                .replace(".", "")
-        ] || "application/octet-stream"
-    );
-}
-
+let contents = mapContentsSync(contentsDir);
 function mapContentsSync(dirPath, obj) {
     let map = obj || {};
     fs.readdirSync(dirPath, {
@@ -28,7 +18,7 @@ function mapContentsSync(dirPath, obj) {
         } else if (file.isDirectory()) {
             const fileUrl = `/${file.name}`;
             map[fileUrl] = {
-                path: `${file.name}/index.html`,
+                path: `${dirPath}/${file.name}/index.html`,
                 contentType: "text/html"
             };
             mapContentsSync(`${dirPath}/${file.name}`, map);
@@ -36,28 +26,37 @@ function mapContentsSync(dirPath, obj) {
     });
     return map;
 }
+function getContentType(file) {
+    return (
+        contentTypes[
+            path
+                .extname(file.name)
+                .toLowerCase()
+                .replace(".", "")
+        ] || "application/octet-stream"
+    );
+}
 
-let contents = mapContentsSync(contentsDir);
+const contentsWatcher = fs.watch(contentsDir);
+contentsWatcher.on("change", () => {
+    console.log("changed");
+    contents = mapContentsSync(contentsDir);
+});
+
 exports.get = function(url) {
     const content = contents[url];
     if (!content) {
         const contentPath = path.normalize(`${contentsDir}${url}`);
         if (!contentPath.startsWith(contentsDir)) {
             return {
-                err: "Forbidden",
-                statusCode: 403
+                err: "Forbidden"
             };
         } else {
             if (!fs.existsSync(contentPath)) {
                 console.log(contentPath);
                 return {
-                    err: "Not Found",
-                    statusCode: 404
+                    err: "Not Found"
                 };
-            } else {
-                // TODO: find better way to update files
-                contents = mapContentsSync(contentPath, contents);
-                exports.get(url);
             }
         }
     } else {
