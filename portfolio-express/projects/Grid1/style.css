@@ -1,0 +1,20 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    background: gray;
+}
+
+header {
+    height: 70px;
+    background: orange;
+}
+
+footer {
+    height: 30px;
+    background: pink;
+}

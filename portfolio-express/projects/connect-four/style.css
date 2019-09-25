@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    overflow: hidden;
+}
+
+#connect4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(7, 100px);
+    grid-template-columns: repeat(7, 100px);
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 50px;
+    box-shadow: 0px 0px 60px 10px rgba(0.3, 10, 10, 0.1);
+}
+
+.slot {
+    overflow: hidden;
+}
+
+.hole {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: relative;
+    left: -40px;
+    top: -40px;
+    border: 50px #333 solid;
+    box-shadow: inset 10px 9px 29px -23px rgba(0, 0, 0, 0.9);
+}
+
+.player1 {
+    background-color: #2bb;
+    box-shadow: inset 10px 9px 29px -9px rgba(0.3, 0.3, 0.3, 0.63);
+    transition: all 0.5s ease-out;
+}
+
+.player2 {
+    background-color: #b22;
+    box-shadow: inset 10px 9px 29px -9px rgba(0, 0, 0, 0.63);
+    transition: all 2s ease-out;
+}
+
+.round-corners {
+    border-radius: 30px;
+    overflow: hidden;
+    user-select: none;
+}

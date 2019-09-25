@@ -1,0 +1,794 @@
+{
+	"/cat-carousel": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "cat-carousel"
+	},
+	"/cat-carousel/assets/kit1.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/assets/kit1.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/assets/kit2.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/assets/kit2.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/assets/kit3.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/assets/kit3.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/assets/kit4.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/assets/kit4.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/cat-carousel/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/cat-carousel/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/connect-four": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "connect-four"
+	},
+	"/connect-four/assets/NexusUI.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/assets/NexusUI.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/connect-four/assets/robot.png": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/assets/robot.png",
+		"type": "image/png",
+		"isProjectFolder": false
+	},
+	"/connect-four/assets/Tone.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/assets/Tone.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/connect-four/assets/yoda.png": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/assets/yoda.png",
+		"type": "image/png",
+		"isProjectFolder": false
+	},
+	"/connect-four/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/connect-four/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/connect-four/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/connect-four/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/dayOne": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/dayOne/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "dayOne"
+	},
+	"/dayOne/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/dayOne/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/DOMEvents1": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents1/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "DOMEvents1"
+	},
+	"/DOMEvents1/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents1/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/DOMEvents1/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents1/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/DOMEvents1/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents1/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/DOMEvents2": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents2/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "DOMEvents2"
+	},
+	"/DOMEvents2/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents2/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/DOMEvents2/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents2/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/DOMEvents2/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents2/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/DOMEvents3": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents3/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "DOMEvents3"
+	},
+	"/DOMEvents3/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents3/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/DOMEvents3/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents3/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/DOMEvents3/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents3/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/DOMEvents4": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents4/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "DOMEvents4"
+	},
+	"/DOMEvents4/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents4/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/DOMEvents4/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents4/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/DOMEvents4/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/DOMEvents4/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/Flexbox1": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox1/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "Flexbox1"
+	},
+	"/Flexbox1/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox1/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/Flexbox1/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox1/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/Flexbox2": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox2/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "Flexbox2"
+	},
+	"/Flexbox2/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox2/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/Flexbox2/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox2/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/Flexbox3": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox3/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "Flexbox3"
+	},
+	"/Flexbox3/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox3/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/Flexbox3/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Flexbox3/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/github-search": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/github-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "github-search"
+	},
+	"/github-search/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/github-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/github-search/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/github-search/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/github-search/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/github-search/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/Grid1": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid1/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "Grid1"
+	},
+	"/Grid1/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid1/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/Grid1/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid1/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/Grid2": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid2/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "Grid2"
+	},
+	"/Grid2/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid2/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/Grid2/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/Grid2/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/handlebars": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/handlebars/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "handlebars"
+	},
+	"/handlebars/authors.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/handlebars/authors.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/handlebars/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/handlebars/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/handlebars/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/handlebars/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/handlebars/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/handlebars/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/html-css-lab": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "html-css-lab"
+	},
+	"/html-css-lab/assets/cat.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/cat.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/columns.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/columns.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/hamburgermenu.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/hamburgermenu.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/reichstag.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/reichstag.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/sprint.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/sprint.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/swim.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/swim.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/assets/world.svg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/assets/world.svg",
+		"type": "image/svg+xml",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/html-css-lab/styles.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/html-css-lab/styles.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/http-request": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/http-request/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "http-request"
+	},
+	"/http-request/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/http-request/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/http-request/requests.txt": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/http-request/requests.txt",
+		"type": "text/plain",
+		"isProjectFolder": false
+	},
+	"/incremental-search": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/incremental-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "incremental-search"
+	},
+	"/incremental-search/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/incremental-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/incremental-search/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/incremental-search/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/incremental-search/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/incremental-search/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/json-validator": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/json-validator/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "json-validator"
+	},
+	"/json-validator/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/json-validator/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/json-validator/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/json-validator/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/json-validator/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/json-validator/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/jumping-man-css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/jumping-man-css/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "jumping-man-css"
+	},
+	"/jumping-man-css/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/jumping-man-css/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/jumping-man-css/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/jumping-man-css/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/klingon-translator": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/klingon-translator/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "klingon-translator"
+	},
+	"/klingon-translator/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/klingon-translator/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/klingon-translator/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/klingon-translator/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/local-storage": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/local-storage/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "local-storage"
+	},
+	"/local-storage/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/local-storage/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/local-storage/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/local-storage/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/local-storage/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/local-storage/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/NodeExercise1": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/NodeExercise1/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "NodeExercise1"
+	},
+	"/NodeExercise1/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/NodeExercise1/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/panes": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "panes"
+	},
+	"/panes/assets/consmilano1.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/assets/consmilano1.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/panes/assets/consmilano2.jpg": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/assets/consmilano2.jpg",
+		"type": "image/jpeg",
+		"isProjectFolder": false
+	},
+	"/panes/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/panes/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/panes/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/panes/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/spotify-search": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/spotify-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "spotify-search"
+	},
+	"/spotify-search/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/spotify-search/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/spotify-search/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/spotify-search/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/spotify-search/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/spotify-search/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/storm-of-stickman-chased-by-a-monster": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/storm-of-stickman-chased-by-a-monster/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "storm-of-stickman-chased-by-a-monster"
+	},
+	"/storm-of-stickman-chased-by-a-monster/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/storm-of-stickman-chased-by-a-monster/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/storm-of-stickman-chased-by-a-monster/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/storm-of-stickman-chased-by-a-monster/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/storm-of-stickman-chased-by-a-monster/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/storm-of-stickman-chased-by-a-monster/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	},
+	"/textadventure": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "textadventure"
+	},
+	"/textadventure/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/ansi-styles/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/ansi-styles/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/ansi-styles/license": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/ansi-styles/license",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/ansi-styles/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/ansi-styles/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/ansi-styles/readme.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/ansi-styles/readme.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/index.js.flow": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/index.js.flow",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/license": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/license",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/readme.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/readme.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/templates.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/templates.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/chalk/types/index.d.ts": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/chalk/types/index.d.ts",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/CHANGELOG.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/CHANGELOG.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/conversions.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/conversions.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/LICENSE": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/LICENSE",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/README.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/README.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-convert/route.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-convert/route.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/.eslintrc.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/.eslintrc.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/.npmignore": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/.npmignore",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/LICENSE": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/LICENSE",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/README.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/README.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/color-name/test.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/color-name/test.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/escape-string-regexp/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/escape-string-regexp/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/escape-string-regexp/license": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/escape-string-regexp/license",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/escape-string-regexp/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/escape-string-regexp/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/escape-string-regexp/readme.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/escape-string-regexp/readme.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/has-flag/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/has-flag/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/has-flag/license": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/has-flag/license",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/has-flag/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/has-flag/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/has-flag/readme.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/has-flag/readme.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/supports-color/browser.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/supports-color/browser.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/supports-color/index.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/supports-color/index.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/supports-color/license": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/supports-color/license",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/supports-color/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/supports-color/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/node_modules/supports-color/readme.md": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/node_modules/supports-color/readme.md",
+		"type": "application/octet-stream",
+		"isProjectFolder": false
+	},
+	"/textadventure/package-lock.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/package-lock.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/textadventure/package.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/textadventure/package.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/ticker": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/ticker/index.html",
+		"type": "text/html",
+		"isProjectFolder": true,
+		"projectName": "ticker"
+	},
+	"/ticker/index.html": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/ticker/index.html",
+		"type": "text/html",
+		"isProjectFolder": false
+	},
+	"/ticker/links.json": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/ticker/links.json",
+		"type": "application/json",
+		"isProjectFolder": false
+	},
+	"/ticker/script.js": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/ticker/script.js",
+		"type": "application/javascript",
+		"isProjectFolder": false
+	},
+	"/ticker/style.css": {
+		"path": "C:\\Users\\Filippo Guida\\Desktop\\coriander-code\\portfolio\\projects/ticker/style.css",
+		"type": "text/css",
+		"isProjectFolder": false
+	}
+}
