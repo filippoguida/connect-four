@@ -1,44 +1,17 @@
-const http = require("http");
-const fs = require("fs");
 const contents = require("./Contents.js");
+const cluster = require("cluster");
+const os = require("os");
 
-http.createServer((req, res) => {
-    const { method, url } = req;
+contents.init();
+cluster.setupMaster({
+    exec: __dirname + "/httpServer.js"
+});
 
-    res.on("error", err => console.log(err.stack));
+for (let i = 0, l = os.cpus().length; i < l; i++) {
+    cluster.fork();
+}
 
-    req.on("error", () => {
-        //Bad Requests
-        res.statusCode = 404;
-        res.end();
-    });
-
-    if (method != "GET") {
-        //method not allowed
-        res.statusCode = 405;
-        res.end();
-    } else {
-        if (url == "/") {
-            return res.end(contents.getListHTML());
-        }
-
-        const content = contents.get(url);
-        if (content.err) {
-            if (content.err == "Forbidden") {
-                res.statusCode = 403;
-                return res.end();
-            } else if (content.err == "Not Found") {
-                res.statusCode = 404;
-                return res.end();
-            }
-        } else {
-            fs.createReadStream(content.path)
-                .on("error", () => {
-                    //Internal Server Error
-                    res.statusCode = 500;
-                    res.end();
-                })
-                .pipe(res);
-        }
-    }
-}).listen(8080, () => console.log("Server is listening on port 8080"));
+cluster.on("exit", function(worker) {
+    console.log(worker.process.pid + " bit the dust");
+    cluster.fork();
+});
