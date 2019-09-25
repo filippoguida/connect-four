@@ -1,8 +1,8 @@
-const contents = require("./Contents.js");
 const cluster = require("cluster");
 const os = require("os");
-
+const contents = require("./Contents.js");
 contents.init();
+
 cluster.setupMaster({
     exec: __dirname + "/httpServer.js"
 });

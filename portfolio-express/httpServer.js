@@ -1,46 +1,17 @@
-const http = require("http");
-const fs = require("fs");
 const contents = require("./Contents.js");
+const express = require("express");
+var app = express();
 
-http.createServer((req, res) => {
-    const { method, url } = req;
+app.get("/", (req, res) => {
+    contents.getListHTML(html => res.send(html));
+});
 
-    res.on("error", err => console.log(err.stack));
+app.use(express.static(__dirname + "/projects"));
+app.use((req, res, next) => {
+    contents.get(req.url, content => res.send(content));
+    next();
+});
 
-    req.on("error", () => {
-        //Bad Requests
-        res.statusCode = 404;
-        res.end();
-    });
-
-    if (method != "GET") {
-        //method not allowed
-        res.statusCode = 405;
-        res.end();
-    } else {
-        if (url == "/") {
-            return contents.getListHTML(html => res.end(html));
-        } else {
-            contents.get(url, content => {
-                if (content.err) {
-                    if (content.err == "Forbidden") {
-                        res.statusCode = 403;
-                        return res.end();
-                    } else if (content.err == "Not Found") {
-                        res.statusCode = 404;
-                        return res.end();
-                    }
-                } else {
-                    res.setHeader("Content-Type", content.type);
-                    fs.createReadStream(content.path)
-                        .on("error", () => {
-                            //Internal Server Error
-                            res.statusCode = 500;
-                            res.end();
-                        })
-                        .pipe(res);
-                }
-            });
-        }
-    }
-}).listen(8080, () => console.log("Server is listening on port 8080"));
+app.listen(8080, () => {
+    console.log("Server is listening on port 8080");
+});
