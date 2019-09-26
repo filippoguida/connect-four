@@ -1,6 +1,13 @@
 (function() {
+    var input = document.querySelector("input");
+    input.addEventListener("keydown", function(e) {
+        if (e.keyCode === 13) {
+            input.value = translateNumberKlingon();
+        }
+    });
+
     function askForNumber() {
-        var num = prompt("Please enter a number between 1 and 10");
+        var num = input.value;
         if (num >= 1 && num <= 10 && num == parseInt(num)) {
             return num;
         }
@@ -32,9 +39,7 @@
                 return "maH";
             }
         } catch (Error) {
-            alert("Bad number, try again: [0, 10]");
-            return translateNumberKlingon();
+            return "Bad number, try again: [0, 10]";
         }
     }
-    console.log(translateNumberKlingon());
 })();
