@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    background: gray;
+}
+
+header {
+    height: 70px;
+    background: orange;
+}
+
+footer {
+    height: 30px;
+    background: pink;
+}

@@ -1,0 +1,8 @@
+<div class="portfolio-container">
+    {{#each projects}}
+       <div class="project">
+           <p>{{this.title}}</p>
+           <iframe src="{{this.directory}}/index.html"></iframe>
+       </div>
+    {{/each}}
+</div>

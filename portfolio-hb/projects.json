@@ -1,0 +1,102 @@
+[
+	{
+		"title": "cat-carousel",
+		"directory": "projects/cat-carousel"
+	},
+	{
+		"title": "connect-four",
+		"directory": "projects/connect-four"
+	},
+	{
+		"title": "dayOne",
+		"directory": "projects/dayOne"
+	},
+	{
+		"title": "DOMEvents1",
+		"directory": "projects/DOMEvents1"
+	},
+	{
+		"title": "DOMEvents2",
+		"directory": "projects/DOMEvents2"
+	},
+	{
+		"title": "DOMEvents3",
+		"directory": "projects/DOMEvents3"
+	},
+	{
+		"title": "DOMEvents4",
+		"directory": "projects/DOMEvents4"
+	},
+	{
+		"title": "Flexbox1",
+		"directory": "projects/Flexbox1"
+	},
+	{
+		"title": "Flexbox2",
+		"directory": "projects/Flexbox2"
+	},
+	{
+		"title": "Flexbox3",
+		"directory": "projects/Flexbox3"
+	},
+	{
+		"title": "github-search",
+		"directory": "projects/github-search"
+	},
+	{
+		"title": "Grid1",
+		"directory": "projects/Grid1"
+	},
+	{
+		"title": "Grid2",
+		"directory": "projects/Grid2"
+	},
+	{
+		"title": "handlebars",
+		"directory": "projects/handlebars"
+	},
+	{
+		"title": "html-css-lab",
+		"directory": "projects/html-css-lab"
+	},
+	{
+		"title": "http-request",
+		"directory": "projects/http-request"
+	},
+	{
+		"title": "incremental-search",
+		"directory": "projects/incremental-search"
+	},
+	{
+		"title": "json-validator",
+		"directory": "projects/json-validator"
+	},
+	{
+		"title": "jumping-man-css",
+		"directory": "projects/jumping-man-css"
+	},
+	{
+		"title": "klingon-translator",
+		"directory": "projects/klingon-translator"
+	},
+	{
+		"title": "local-storage",
+		"directory": "projects/local-storage"
+	},
+	{
+		"title": "panes",
+		"directory": "projects/panes"
+	},
+	{
+		"title": "spotify-search",
+		"directory": "projects/spotify-search"
+	},
+	{
+		"title": "storm-of-stickman-chased-by-a-monster",
+		"directory": "projects/storm-of-stickman-chased-by-a-monster"
+	},
+	{
+		"title": "ticker",
+		"directory": "projects/ticker"
+	}
+]

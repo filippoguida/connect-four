@@ -1,0 +1,20 @@
+#container {
+    display: flex;
+}
+
+#country::placeholder {
+    color: lightgrey;
+}
+
+#country,
+.result {
+    font-family: "Georgia", serif;
+    font-size: 18pt;
+    padding: 10px;
+    margin: 0;
+    resize: none;
+}
+
+.highlight {
+    background-color: lightblue;
+}

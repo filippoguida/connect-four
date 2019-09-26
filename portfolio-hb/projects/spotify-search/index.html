@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Spotify Search</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id="searchtools">
+                <input type="text" id="searchbar" name="searchbar">
+                <select id="searchtype" name="searchtype">
+                    <option value="artist" selected="selected">Artist</option>
+                    <option value="album">Album</option>
+                </select>
+                <button type="button" id="searchbutton" name="searchbutton">search</button>
+            </div>
+            <div id="results-spotify"></div>
+            <script id="result" type="text/x-handlebars-template">
+                {{#each items}}
+                <div class="card">
+                    <img src={{this.images.0.url}}>
+                    <a href={{this.external_urls.spotify}}>{{this.name}}</a>
+                </div>
+                {{/each}}
+            </script>
+        </main>
+        <script src="script.js" charset="utf-8"></script>
+    </body>
+</html>

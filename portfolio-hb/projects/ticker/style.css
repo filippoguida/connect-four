@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.ticker {
+    white-space: nowrap;
+    border-bottom: 2px solid black;
+    margin: 0;
+    padding: 10px;
+}
+
+.ticker a {
+    display: inline-block;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.ticker a:hover {
+    text-decoration: underline;
+}
+
+.bottom {
+    position: absolute;
+    border-top: 2px solid black;
+    border-bottom: none;
+    bottom: 0;
+}
