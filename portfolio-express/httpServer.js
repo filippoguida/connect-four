@@ -29,9 +29,11 @@ app.use(
 app.get("/", (req, res) => {
     if (req.cookies.agreed) {
         let body = "<ul>";
-        fs.readdir(__dirname + "/projects", f => {
-            console.log(f.name);
-            body += `<li><a href="/projects/${f.name}">${f.name}</a></li>`;
+        fs.readdir(__dirname + "/projects", (e, f) => {
+            if (!e) {
+                console.log(f.name);
+                body += `<li><a href="/projects/${f.name}">${f.name}</a></li>`;
+            }
         });
         body += "</ul>";
         return res.send(body);
