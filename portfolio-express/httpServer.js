@@ -1,8 +1,20 @@
 const fs = require("fs");
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const basicAuth = require("basic-auth");
 const app = express();
 
+//Auth
+app.use((req, res, next) => {
+    let creds = basicAuth(req);
+    if (!creds || creds.name != "discoduck" || creds.pass != "opensesame") {
+        res.setHeader(
+            "WWW-Authenticate",
+            'Basic realm="Enter your credentials."'
+        );
+        res.sendStatus(401);
+    } else next();
+});
 
 //Serve contents
 app.use(express.static(__dirname + "/projects"));
