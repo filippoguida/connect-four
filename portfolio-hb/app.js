@@ -14,7 +14,7 @@ app.set("view engine", "handlebars");
 app.get("/", (req, res) => {
     res.render("welcome", {
         layout: "layout",
-        title: "Portfolio HB",
+        title: "Portfolio HB Welcome Page",
         projects: require("./projects.json")
     });
 });
