@@ -2,7 +2,9 @@
     {{#each projects}}
        <div class="project">
            <p>{{this.title}}</p>
-           <iframe src="{{this.directory}}/index.html"></iframe>
+           <a href="{{this.directory}}/index.html">
+               <iframe src="{{this.directory}}/index.html"></iframe>
+           </a>
        </div>
     {{/each}}
 </div>
