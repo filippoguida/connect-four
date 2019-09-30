@@ -44,10 +44,31 @@ module.exports.getTweets = (token, user_id, callback) => {
             let body = "";
             res.on("data", chunk => (body += chunk));
             res.on("end", () => {
+                let tweets = JSON.parse(body);
                 if (res.statusCode !== 200) callback(res);
-                else callback(null, JSON.parse(body));
+                else callback(null, filterTweets(tweets));
             });
         }
     );
     req.end();
 };
+
+function filterTweets(tweets) {
+    let filteredTweets = [];
+    for (let tweet of tweets) {
+        try {
+            let text = tweet.text;
+            for (let media of tweet.entities.media) {
+                text = text.replace(media.url, "");
+            }
+            for (let link of tweet.entities.urls) {
+                text = text.replace(link.url, "");
+            }
+            let url = tweet.entities.urls[0].url;
+            filteredTweets.push({ text, url });
+        } catch (err) {
+            //fail silently
+        }
+    }
+    return filteredTweets;
+}

@@ -1,36 +1,27 @@
-const fs = require("fs");
 const twitter = require("./twitter.js");
 const express = require("express");
 const app = express();
 
-app.use("/", express.static(__dirname + "/ticker"));
+app.use(express.static(__dirname + "/ticker"));
 
-app.get("/ticker/links.json", () => {
+app.get("/links.json", (req, res) => {
     twitter.getToken((err, token) => {
         if (!err) {
             twitter.getTweets(token, "theonion", (err, tweets) => {
                 if (!err) {
-                    let tickerLinks = [];
-                    for (let tweet of tweets) {
-                        try {
-                            let url = tweet.entities.urls[0].url;
-                            let text = tweet.text.split("http")[0];
-                            tickerLinks.push({ text, url });
-                        } catch (err) {
-                            console.log(
-                                "Tweet " + tweet.id + " skipped. No URL."
-                            );
-                        }
-                    }
-                    fs.writeFile(
-                        "./ticker/links.json",
-                        JSON.stringify(tickerLinks, null, "\t"),
-                        "utf8",
-                        err => console.log(err)
-                    );
-                } else console.log("error");
+                    res.statusCode = 200;
+                    res.json(tweets);
+                } else {
+                    console.log(err);
+                    res.statusCode = 500;
+                    res.end();
+                }
             });
-        } else console.log(err);
+        } else {
+            console.log(err);
+            res.statusCode = 500;
+            res.end();
+        }
     });
 });
 

@@ -6,7 +6,6 @@
 
         var self = this; //when are we going to use lambda functions :( ?
         links.forEach(function(link) {
-            console.log(link);
             var anchor = $("<a href=" + link.url + ">" + link.text + "</a>");
             anchor
                 .on("mouseover", function() {
@@ -69,7 +68,7 @@
     };
 
     $.ajax({
-        url: "http://localhost:8080/links.json",
+        url: "/links.json",
         method: "GET",
         data: {
             limit: 20
