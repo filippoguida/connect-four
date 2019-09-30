@@ -1,15 +1,62 @@
-.portfolio-container {
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: pink;
+}
+
+header {
+    text-align: center;
+    padding: 25px;
+    height: 100px;
+}
+
+main {
+    display: flex;
+}
+
+#projects {
     display: flex;
     flex-wrap: wrap;
+    max-width: 570px;
+    margin: auto;
+}
+
+.project img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
 }
 
 .project {
-    margin: 20px;
+    width: 190px;
+    padding: 20px;
+    white-space: nowrap;
     overflow: hidden;
 }
 
-.project iframe {
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
+#description * {
+    margin: 10px;
+    padding-right: 30%;
+}
+
+footer {
+    height: 50px;
+    margin: 15px;
+    padding: 15px;
 }
