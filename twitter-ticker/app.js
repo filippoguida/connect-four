@@ -8,14 +8,13 @@ app.use("/", express.static(__dirname + "/ticker"));
 app.get("/ticker/links.json", () => {
     twitter.getToken((err, token) => {
         if (!err) {
-            console.log("?");
             twitter.getTweets(token, "theonion", (err, tweets) => {
                 if (!err) {
                     let tickerLinks = [];
                     for (let tweet of tweets) {
                         try {
                             let url = tweet.entities.urls[0].url;
-                            let text = tweet.text;
+                            let text = tweet.text.split("http")[0];
                             tickerLinks.push({ text, url });
                         } catch (err) {
                             console.log(
