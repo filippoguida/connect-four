@@ -20,13 +20,19 @@ app.get("/", (req, res) => {
 });
 
 app.get("/projects/:title/description", (req, res) => {
-    const projects = require("./projects.json");
     const { title } = req.params;
+    const projects = require("./projects.json");
+    const currentProject = projects.find(p => p.title === title);
     res.render("description", {
         layout: "layout",
-        currentProject: projects.find(p => p.title === title),
+        currentProject,
         title,
-        projects
+        projects,
+        helpers: {
+            focusCurrent(project) {
+                return project.title === title ? "current-project" : "other";
+            }
+        }
     });
 });
 

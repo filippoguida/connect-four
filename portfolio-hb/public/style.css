@@ -12,6 +12,11 @@ a:hover {
     text-decoration: underline;
 }
 
+a.current-project {
+    font-weight: bolder;
+    font-style: italic;
+}
+
 body {
     display: flex;
     flex-direction: column;

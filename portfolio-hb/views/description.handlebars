@@ -1,0 +1,12 @@
+<main>
+    <section id="projects">
+        {{> projects}}
+    </section>
+    <section id="description">
+        <a href="/projects/{{this.title}}">
+            <h1>{{currentProject.title}}</h1>
+            <img src="/{{currentProject.directory}}/screenshot.png">
+        </a>
+        <p>{{currentProject.description}}</p>
+    </section>
+</main>
