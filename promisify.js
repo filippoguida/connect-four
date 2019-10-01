@@ -1,24 +1,40 @@
 const fs = require("fs");
-const util = require("util");
 
-const readdir = util.promisify(fs.readdir);
-const stat = util.promisify(fs.stat);
+function readdir(path) {
+    return new Promise((resolve, reject) => {
+        fs.readdir(path, { withFileTypes: true }, (err, files) => {
+            if (err) reject(err);
+            else resolve(files);
+        });
+    });
+}
 
+function stat(file, path) {
+    return new Promise((resolve, reject) => {
+        fs.stat(`${path}/${file.name}`, (err, s) => {
+            if (err) reject(err);
+            else resolve(s);
+        });
+    });
+}
+
+let promises = [];
 function logSizes(path) {
-    readdir(path, {
-        withFileTypes: true
-    })
-        .then(files => {
-            for (let f of files) {
-                if (f.isFile()) {
-                    stat(`${path}/${f.name}`)
-                        .then(s => console.log(`${path}/${f.name}: ${s.size}`))
-                        .catch(err => console.log(err));
-                } else if (f.isDirectory()) {
-                    logSizes(`${path}/${f.name}`);
+    promises.push(
+        readdir(path).then(files => {
+            for (let file of files) {
+                if (file.isFile()) {
+                    promises.push(
+                        stat(file, path).then(s =>
+                            console.log(`${path}/${file.name}: ${s.size}`)
+                        )
+                    );
+                } else if (file.isDirectory()) {
+                    promises.push(logSizes(`${path}/${file.name}`));
                 }
             }
         })
-        .catch(err => console.log(err));
+    );
 }
 logSizes("C:/Users/Filippo Guida/Desktop/coriander-code");
+Promise.all(promises);
