@@ -11,13 +11,9 @@ function logSizes(path) {
         .then(files => {
             for (let f of files) {
                 if (f.isFile()) {
-                    fs.stat(`${path}/${f.name}`, (err, s) => {
-                        if (err) {
-                            console.log(err);
-                        } else {
-                            console.log(`${path}/${f.name}: ${s.size}`);
-                        }
-                    });
+                    stat(`${path}/${f.name}`)
+                        .then(s => console.log(`${path}/${f.name}: ${s.size}`))
+                        .catch(err => console.log(err));
                 } else if (f.isDirectory()) {
                     logSizes(`${path}/${f.name}`);
                 }
