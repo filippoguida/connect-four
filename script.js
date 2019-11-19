@@ -1,15 +1,15 @@
-(function(Nexus, Tone) {
+(function() {
     //specifications
-    var numOfRows = 7;
-    var numOfCols = 7;
+    const numOfRows = 7;
+    const numOfCols = 7;
 
     //matrix functions
-    var boardStatus = [];
+    let boardStatus = [];
     function initBoardStatus() {
         boardStatus = [];
-        for (var c = 0; c < numOfCols; c++) {
+        for (let c = 0; c < numOfCols; c++) {
             boardStatus[c] = new Array(numOfRows);
-            for (var r = 0; r < numOfRows; r++) {
+            for (let r = 0; r < numOfRows; r++) {
                 boardStatus[c][r] = 0;
             }
         }
@@ -17,9 +17,9 @@
     initBoardStatus();
 
     function getRowAsString(reqRow) {
-        var row = "";
-        for (var c = 0; c < numOfCols; c++) {
-            for (var r = 0; r < numOfRows; r++) {
+        let row = "";
+        for (let c = 0; c < numOfCols; c++) {
+            for (let r = 0; r < numOfRows; r++) {
                 if (r === reqRow) {
                     row += boardStatus[c][r];
                 }
@@ -29,9 +29,9 @@
     }
 
     function getColAsString(reqCol) {
-        var col = "";
-        for (var c = 0; c < numOfCols; c++) {
-            for (var r = 0; r < numOfRows; r++) {
+        let col = "";
+        for (let c = 0; c < numOfCols; c++) {
+            for (let r = 0; r < numOfRows; r++) {
                 if (c == reqCol) {
                     col += boardStatus[c][r];
                 }
@@ -41,9 +41,8 @@
     }
 
     function getDiagonalsAsString(reqRow, reqCol) {
-        var r, c;
-
-        var diagLR = "";
+        let r, c;
+        let diagLR = "";
         r = reqRow;
         c = reqCol;
         while (r < numOfRows && c < numOfCols) {
@@ -58,8 +57,7 @@
             r--;
             c--;
         }
-
-        var diagRL = "";
+        let diagRL = "";
         r = reqRow;
         c = reqCol;
         while (r >= 0 && c < numOfCols) {
@@ -74,49 +72,41 @@
             r++;
             c--;
         }
-
         return [diagRL, diagLR];
     }
 
     //game logic
-    var currentPlayer = 1;
+    let currentPlayer = 1;
     function checkForVictory(r, c) {
-        //row
-        var row = getRowAsString(r);
+        let row = getRowAsString(r);
         if (row.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
             gameOver(currentPlayer);
         }
-
-        //col
-        var col = getColAsString(c);
+        let col = getColAsString(c);
         if (col.indexOf(currentPlayer.toString().repeat(4)) !== -1) {
             gameOver(currentPlayer);
         }
-
-        //diagonal
-        var diags = getDiagonalsAsString(r, c);
+        let diags = getDiagonalsAsString(r, c);
         if (diags[0].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
             gameOver(currentPlayer);
         }
         if (diags[1].indexOf(currentPlayer.toString().repeat(4)) !== -1) {
             gameOver(currentPlayer);
         }
-
-        //not there yet
     }
 
-    var gameOverFlag = false;
+    let gameOverFlag = false;
     function gameOver(winner) {
-        setTimeout(function() {
-            alert("Player " + winner + " Wins!");
-            location.reload();
+        setTimeout(() => {
+            $(".game-over-modal").show();
+            $(".game-over-modal h1").html("Player " + winner + " Wins!");
         }, 100);
         gameOverFlag = true;
     }
 
-    var movesHistory = [];
+    let movesHistory = [];
     function move(selectedColumn) {
-        var emptySlotRow = getColAsString(selectedColumn).indexOf("0");
+        let emptySlotRow = getColAsString(selectedColumn).indexOf("0");
         if (emptySlotRow != -1) {
             boardStatus[selectedColumn][emptySlotRow] = currentPlayer;
             movesHistory.push(selectedColumn);
@@ -126,9 +116,10 @@
         }
     }
 
-    function switchPlayers() {
+    async function switchPlayers() {
         if (currentPlayer === 1) {
             currentPlayer = 2;
+            await nextRobotMove();
         } else {
             currentPlayer = 1;
         }
@@ -137,9 +128,8 @@
     //DOM - board generation
     function drawBoard() {
         $(".slot").remove(); //clear
-
-        for (var c = 0; c < numOfCols; c++) {
-            for (var r = 0; r < numOfRows; r++) {
+        for (let c = 0; c < numOfCols; c++) {
+            for (let r = 0; r < numOfRows; r++) {
                 $("#board").append(
                     "<div " +
                         'class="slot player' +
@@ -156,12 +146,24 @@
                 );
             }
         }
+        //Real Player - Event handlers
+        let player2Robot = true;
+        $(".slot").on("click", function(e) {
+            if (gameOverFlag) {
+                return;
+            }
+            if (currentPlayer == 2 && player2Robot) {
+                return;
+            }
+            let col = $(e.currentTarget).css("grid-column-start") - 1;
+            move(col);
+        });
     }
     drawBoard();
 
     function updateBoard() {
-        for (var c = 0; c < numOfCols; c++) {
-            for (var r = 0; r < numOfRows; r++) {
+        for (let c = 0; c < numOfCols; c++) {
+            for (let r = 0; r < numOfRows; r++) {
                 $(".slot.row" + (numOfRows - r) + ".col" + (c + 1))
                     .removeClass("player0")
                     .removeClass("player1")
@@ -173,9 +175,9 @@
 
     //remote AI player - http://kevinalbs.com/connect4/back-end/info.html
     function embedBoardStatus() {
-        var board_data = "";
-        for (var r = numOfRows; r > 0; r--) {
-            for (var c = 0; c < numOfCols; c++) {
+        let board_data = "";
+        for (let r = numOfRows; r > 0; r--) {
+            for (let c = 0; c < numOfCols; c++) {
                 board_data += boardStatus[c][r - 1];
             }
         }
@@ -190,17 +192,23 @@
                 board_data: embedBoardStatus(),
                 player: currentPlayer
             },
-            success: function(payload) {
+            success: payload => {
                 payload = JSON.parse(payload);
-                var selectedColumn = Object.values(payload).indexOf(
+                let selectedColumn = Object.values(payload).indexOf(
                     Math.max.apply(null, Object.values(payload))
                 );
                 move(selectedColumn);
-                if (!gameOverFlag) setTimeout(nextRobotMove, 200);
             }
         });
     }
 
-    //start game
-    nextRobotMove();
-})(Nexus, Tone);
+    //start/re-start game
+    $(".game-over-modal").hide();
+    $(".welcome-modal").on("click", () => $(".welcome-modal").hide());
+    $(".game-over-modal").on("click", () => {
+        $(".game-over-modal").hide();
+        gameOverFlag = false;
+        initBoardStatus();
+        drawBoard();
+    });
+})();

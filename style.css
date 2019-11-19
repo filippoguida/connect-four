@@ -60,3 +60,21 @@ body {
     overflow: hidden;
     user-select: none;
 }
+
+.welcome-modal,
+.game-over-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: monospace;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
