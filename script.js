@@ -1,4 +1,4 @@
-(function() {
+$().ready(function() {
     //specifications
     const numOfRows = 7;
     const numOfCols = 7;
@@ -211,4 +211,4 @@
         initBoardStatus();
         drawBoard();
     });
-})();
+});
