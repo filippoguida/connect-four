@@ -10,4 +10,4 @@ In this version a single player will be able to play by himself against a virtua
 
 ### SPICED Academy 2019 - @filippoguida
 
-[screenshot](/screenshot.png)
+![screenshot](/screenshot.png)
