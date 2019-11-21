@@ -1,0 +1,31 @@
+{
+    "name": "connect-four",
+    "version": "1.0.0",
+    "description": "Connect 4: Human vs Robot",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/filippoguida/connect-four.git"
+    },
+    "keywords": [
+        "javascript",
+        "jquery",
+        "axios",
+        "express",
+        "node",
+        "html",
+        "css"
+    ],
+    "author": "Filippo Guida",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/filippoguida/connect-four/issues"
+    },
+    "homepage": "https://github.com/filippoguida/connect-four#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
