@@ -1,4 +1,5 @@
 # Connect 4
+http://c4-human-robot.herokuapp.com/
 
 ## Human vs Robot
 
